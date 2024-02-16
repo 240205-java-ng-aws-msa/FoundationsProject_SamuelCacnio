@@ -1,0 +1,16 @@
+.body{
+    display: flex;
+}
+#top_banner{
+    display: flex;
+    justify-content: space-between;
+}
+#search{
+    display: flex;
+    align-items: flex-start;
+}
+#account{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
