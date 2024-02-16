@@ -11,16 +11,20 @@
     <div id="top_banner">
         <div id="search">
             <label for="bar">Search: </label>
-            <input type="text" id="bar"/>
+            <input type="text" id="bar" placeholder="What are you looking for?"/>
+        </div>
+        <div id="Welcome">
+            <p>Welcome to RevShop!</p>
         </div>
         <div id="account">
-            <label for="email-input">Email: <input type="text" id="email-input" required> </label>
+            <label for="email-input">Email: <input type="email" id="email-input" placeholder="example@email.com"> </label>
             
-            <label for="pass-input">Password: <input type="text" id="pass-input" required> </label>
-            
-        
-            <input type="submit" value="Login" onclick="login()">
-            <input type="submit" value="Register" onclick="register()">
+            <label for="pass-input">Password: <input type="password" id="pass-input" placeholder="yourpassword"> </label>
+            <div>
+                <text></text>
+                <input type="button" value="Login" onclick="login()">
+                <input type="button" value="Register" onclick="register()">
+            </div>
         </div>
     </div>
     <img 

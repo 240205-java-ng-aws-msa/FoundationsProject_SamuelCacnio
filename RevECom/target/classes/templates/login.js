@@ -21,12 +21,14 @@ async function login(){
             while (accountInfo.firstChild){
                 accountInfo.lastChild.remove();
             }
-            const logName = document.createElement("p");
-            logName.innerHTML = data.email;
+            const logName = document.createTextNode(data.email);
+            accountInfo.appendChild(logName);
+            const logOut = document.createElement("input");
+            logOut.type = "submit";
+            logOut.value = "Logout";
+            logOut.onclick = "logout()";
+            accountInfo.appendChild(logOut);
         }
-        /*let message = document.getElementById("warning");
-        message.textContent="logged!";*/
-        //window.location.href = "./store.html"
     }
     catch (err){
         console.log("FAILED");

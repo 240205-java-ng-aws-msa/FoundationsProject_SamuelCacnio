@@ -21,12 +21,12 @@ async function login(){
             while (accountInfo.firstChild){
                 accountInfo.lastChild.remove();
             }
-            const logName = document.createTextNode(data.email);
+            const logName = document.createTextNode("Logged in as: "+data.email);
             accountInfo.appendChild(logName);
             const logOut = document.createElement("input");
-            logOut.type = "submit";
+            logOut.type = "button";
             logOut.value = "Logout";
-            logOut.onclick = "logout()";
+            logOut.setAttribute("onclick", "logout()");
             accountInfo.appendChild(logOut);
         }
     }
