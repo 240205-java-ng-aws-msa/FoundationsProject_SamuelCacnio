@@ -19,12 +19,15 @@ async function login(){
         );
         if (res.status === 200){
             const data = await res.json();
+            console.log(data);
+            console.log(data.email);
             const accountInfo = document.getElementById("account");
             while (accountInfo.firstChild){
                 accountInfo.lastChild.remove();
             }
             const logName = document.createTextNode("Logged in as: "+data.email);
             accountInfo.appendChild(logName);
+            
             const logOut = document.createElement("input");
             logOut.type = "button";
             logOut.value = "Logout";

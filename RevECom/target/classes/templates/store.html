@@ -8,12 +8,14 @@
     <script src="login.js"></script>
     <script src="logout.js"></script>
     <script src="register.js"></script>
+    <script src="test_item.js"></script>
 </head>
 <body>
     <div id="top_banner">
         <div id="search">
-            <label for="bar">Search: </label>
-            <input type="text" id="bar" placeholder="What are you looking for?"/>
+            <label for="search-bar">Search: </label>
+            <input type="text" id="search-bar" placeholder="What are you looking for?"/>
+            <input type="button" value="Go!" onclick="search()">
         </div>
         <div id="Welcome">
             <p>Welcome to RevShop!</p>
@@ -29,11 +31,8 @@
             </div>
         </div>
     </div>
-    <img 
-        src="C:\Users\samca\Revature_Training\FoundationsProject_SamuelCacnio\RevECom\src\main\resources\images\knight.jpg"
-        alt="Woops!"
-        height="200px"
-        width="150px"
-    />
+    <div id = "shop-display">
+        <input type="button" value="Shop" onclick="test_item()">
+    </div>
 </body>
 </html>

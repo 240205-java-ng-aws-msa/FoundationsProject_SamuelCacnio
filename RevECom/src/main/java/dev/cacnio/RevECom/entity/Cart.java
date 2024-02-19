@@ -22,35 +22,35 @@ public class Cart {
     *  toString override
     */
 
-    private ArrayList<ShopItem> cart;
+    private ArrayList<Product> cart;
 
     public Cart(){
-        cart = new ArrayList<ShopItem>();
+        cart = new ArrayList<Product>();
     }
-    public Cart(ArrayList<ShopItem> cart){
+    public Cart(ArrayList<Product> cart){
         this.cart = cart;
     }
-    public Cart(ShopItem item){
-        cart = new ArrayList<ShopItem>();
+    public Cart(Product item){
+        cart = new ArrayList<Product>();
         cart.add(item);
     }
 
     //accessor
-    public ArrayList<ShopItem> getCart(){
+    public ArrayList<Product> getCart(){
         return cart;
     }
 
     //mutator
-    public void setCart(ArrayList<ShopItem> cart) {
+    public void setCart(ArrayList<Product> cart) {
         this.cart = cart;
     }
 
     //cart interaction
-    public ShopItem addToCart(ShopItem item){
+    public Product addToCart(Product item){
         cart.add(item);
         return item;
     }
-    public ShopItem removeFromCart(ShopItem item){
+    public Product removeFromCart(Product item){
         cart.remove(item);
         return item;
     }
@@ -71,7 +71,7 @@ public class Cart {
     @Override
     public String toString() {
         String items_list = "";
-        for (ShopItem i:cart){
+        for (Product i:cart){
             items_list = items_list.concat(i.getName()+"\n");
         }
         return  items_list;

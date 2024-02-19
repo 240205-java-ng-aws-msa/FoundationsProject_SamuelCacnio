@@ -22,12 +22,14 @@ async function register(){
         );
         if (res.status === 200){
             const data = await res.json();
+            console.log(data);
             const accountInfo = document.getElementById("account");
             while (accountInfo.firstChild){
                 accountInfo.lastChild.remove();
             }
             const logName = document.createTextNode("Welcome new user: "+data.email);
             accountInfo.appendChild(logName);
+            
             const logOut = document.createElement("input");
             logOut.type = "button";
             logOut.value = "Logout";

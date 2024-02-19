@@ -14,7 +14,7 @@ public class EShopController {
     @Autowired
     AccountService accountService;
     @Autowired
-    ShopItemService shopItemService;
+    ProductService productService;
 
     /*
     * TODO
@@ -44,13 +44,14 @@ public class EShopController {
     }
 
     @GetMapping("/store")
-    public ResponseEntity<List<ShopItem>> allItems(){
-        return ResponseEntity.status(200).body(shopItemService.getAllShopItems());
+    @ResponseBody
+    public ResponseEntity<List<Product>> allItems(){
+        return ResponseEntity.status(200).body(productService.getAllProducts());
     }
 
-    @GetMapping("/store/{item_name}")
-    public ResponseEntity<ShopItem> findItem(@PathVariable String name){
-        ShopItem target = shopItemService.findByName(name);
+    @GetMapping("/store/{name}")
+    public ResponseEntity<Product> findItem(@PathVariable String name){
+        Product target = productService.findByName(name);
         return ResponseEntity.status(200).body(target);
     }
 }
