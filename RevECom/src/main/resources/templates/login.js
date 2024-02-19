@@ -6,6 +6,8 @@ async function login(){
         password: document.getElementById("pass-input").value
     };
 
+    const warning = document.getElementById("warning");
+
     try{
         const res = await fetch(url, {
             method: "POST",
@@ -29,8 +31,18 @@ async function login(){
             logOut.setAttribute("onclick", "logout()");
             accountInfo.appendChild(logOut);
         }
+        else if (res.status === 401){
+            warning.innerHTML = "Invalid credentials. Try again.";
+            document.getElementById("email-input").value = "";
+            document.getElementById("pass-input").value = "";
+        }
+        else{
+            warning.innerHTML = "Something went wrong. Please try again.";
+            document.getElementById("email-input").value = "";
+            document.getElementById("pass-input").value = "";
+        }
     }
     catch (err){
-        console.log("FAILED");
+        window.location.reload();;
     }
 }

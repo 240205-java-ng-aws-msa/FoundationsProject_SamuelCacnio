@@ -1,13 +1,16 @@
-async function login(){
-    const url = "http://localhost:8080/login"
+async function register(){
+    const url = "http://localhost:8080/register"
 
     const logInfo = {
         email: document.getElementById("email-input").value,
         password: document.getElementById("pass-input").value
     };
-
     const warning = document.getElementById("warning");
-
+    if (logInfo.password.length < 8){
+        warning.innerHTML = "Password must be at least 8 characters."
+        document.getElementById("pass-input").value = "";
+        return;
+    }
     try{
         const res = await fetch(url, {
             method: "POST",
@@ -23,7 +26,7 @@ async function login(){
             while (accountInfo.firstChild){
                 accountInfo.lastChild.remove();
             }
-            const logName = document.createTextNode("Logged in as: "+data.email);
+            const logName = document.createTextNode("Welcome new user: "+data.email);
             accountInfo.appendChild(logName);
             const logOut = document.createElement("input");
             logOut.type = "button";
@@ -31,10 +34,8 @@ async function login(){
             logOut.setAttribute("onclick", "logout()");
             accountInfo.appendChild(logOut);
         }
-        else if (res.status === 401){
-            warning.innerHTML = "Invalid credentials. Try again.";
-            document.getElementById("email-input").value = "";
-            document.getElementById("pass-input").value = "";
+        else if (res.status === 400){
+            warning.innerHTML = "Account already exits. Try Login.";
         }
         else{
             warning.innerHTML = "Something went wrong. Please try again.";
@@ -45,4 +46,4 @@ async function login(){
     catch (err){
         window.location.reload();;
     }
-}
+}   
