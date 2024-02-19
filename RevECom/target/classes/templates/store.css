@@ -1,5 +1,6 @@
-.body{
-    display: flex;
+img{
+    width: 300px;
+    height: 300px;
 }
 #top_banner{
     display: flex;
@@ -19,4 +20,9 @@
 }
 #welcome{
     font-weight: bold;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
