@@ -3,7 +3,6 @@ package dev.cacnio.RevECom.entity;
 import jakarta.persistence.*;
 
 import java.util.Objects;
-import java.util.Set;
 
 /*
  * This class models a user of our eShop
@@ -24,9 +23,6 @@ public class Account {
      *  Getters X
      *  Setters X
      *  View Cart
-     *  add to cart
-     *  remove from cart
-     *  checkout
      *  equals override X
      *  toString override X
      */

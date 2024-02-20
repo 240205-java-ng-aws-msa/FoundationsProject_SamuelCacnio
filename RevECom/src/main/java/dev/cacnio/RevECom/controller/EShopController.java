@@ -15,7 +15,8 @@ public class EShopController {
     AccountService accountService;
     @Autowired
     ProductService productService;
-
+    @Autowired
+    CartService cartService;
     /*
     * TODO
     *  register
