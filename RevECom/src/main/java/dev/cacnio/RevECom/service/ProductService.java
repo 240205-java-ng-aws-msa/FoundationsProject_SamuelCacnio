@@ -32,6 +32,14 @@ public class ProductService {
         }
     }
 
+    public List<Product> getCategory(String category){
+        try{
+            return productRepository.findByCategory(category);
+        } catch (NoSuchElementException | IllegalArgumentException e){
+            return null;
+        }
+    }
+
     public List<Product> getAllProducts(){
         return productRepository.findAll();
     }

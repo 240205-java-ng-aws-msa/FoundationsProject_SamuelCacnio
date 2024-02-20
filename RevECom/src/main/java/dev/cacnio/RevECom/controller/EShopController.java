@@ -50,7 +50,13 @@ public class EShopController {
         return ResponseEntity.status(200).body(productService.getAllProducts());
     }
 
-    @GetMapping("/store/{name}")
+    @GetMapping("/store/nations/{category}")
+    @ResponseBody
+    public ResponseEntity<List<Product>> findCategory(@PathVariable String category){
+        return ResponseEntity.status(200).body(productService.getCategory(category));
+    }
+
+    @GetMapping("/store/names/{name}")
     public ResponseEntity<Product> findItem(@PathVariable String name){
         Product target = productService.findByName(name);
         return ResponseEntity.status(200).body(target);
