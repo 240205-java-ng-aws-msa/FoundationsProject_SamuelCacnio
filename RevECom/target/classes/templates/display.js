@@ -35,7 +35,7 @@ async function single_display(product){
     item.appendChild(item_img);
             
     const item_price = document.createElement("p");
-    item_price.innerHTML = product.price;
+    item_price.innerHTML = "$"+product.price;
     item.appendChild(item_price);
 
     const item_desc = document.createElement("p");

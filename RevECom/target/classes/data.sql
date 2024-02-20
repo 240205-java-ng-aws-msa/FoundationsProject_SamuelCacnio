@@ -15,7 +15,10 @@ create table product (
 
 --https://www.baeldung.com/jpa-many-to-many
 
-insert into account values (1114, 'jsmith@123', 'password');
-insert into account values (2222, 'johndoe@99', 'password');
+insert into account values (1, 'jsmith@123', 'password');
+insert into account values (2, 'johndoe@99', 'password');
 
-insert into product values (1111, 'imperial_knight', 'C:\Users\samca\Revature_Training\FoundationsProject_SamuelCacnio\RevECom\src\main\resources\images\knight.jpg', 60.0, 'For the Emperor!');
+insert into product values (1, 'Fury', "C:/Users/samca/Revature_Training/FoundationsProject_SamuelCacnio/RevECom/src/main/resources/static/fury.jpg", 60.0, 'M4 Sherman tank as seen in the eponymous film');
+insert into product values (2, 'KV-2', "C:/Users/samca/Revature_Training/FoundationsProject_SamuelCacnio/RevECom/src/main/resources/static/kv2.jpg", 80.0, 'The Death Fridge');
+insert into product values (3, 'Thunderbolt-VII', "C:/Users/samca/Revature_Training/FoundationsProject_SamuelCacnio/RevECom/src/main/resources/static/thunderboltvii.jpg", 70.0, 'Commanded by Lieutenant Colonel Creighton Abrams');
+insert into product values (4, 'Tiger-131', "C:/Users/samca/Revature_Training/FoundationsProject_SamuelCacnio/RevECom/src/main/resources/static/tiger131.jpg", 90.0, 'The last Tiger');
