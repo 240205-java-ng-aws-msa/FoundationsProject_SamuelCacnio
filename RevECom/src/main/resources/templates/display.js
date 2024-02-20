@@ -1,4 +1,4 @@
-async function test_item(){ 
+async function all_items(){ 
     const url = "http://localhost:8080/store";
 
     try{
@@ -7,7 +7,7 @@ async function test_item(){
         if (res.status === 200){
             const data = await res.json();
             for (product of data){
-                single_display(product);
+                single_display(product, "shop-display");
             }
         }
         else{
@@ -19,8 +19,8 @@ async function test_item(){
     }
 }
 
-async function single_display(product){
-    const shop = document.getElementById("shop-display");
+async function single_display(product, place){
+    const shop = document.getElementById(place);
     const item = document.createElement("div");
     item.setAttribute("class", "item");
 
@@ -38,9 +38,11 @@ async function single_display(product){
     item_price.innerHTML = "$"+product.price;
     item.appendChild(item_price);
 
+    /*
     const item_desc = document.createElement("p");
     item_desc.innerHTML = product.description;
     item.appendChild(item_desc);
+    */
             
     shop.appendChild(item);
 }

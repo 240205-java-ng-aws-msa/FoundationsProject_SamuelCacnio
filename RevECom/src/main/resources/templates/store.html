@@ -10,14 +10,26 @@
     <script src="register.js"></script>
     <script src="display.js"></script>
 </head>
-<body onload="test_item()">
+<body onload="all_items()">
     <div id="top_banner">
         <div id="search">
-            <label for="search-bar">Search: </label>
-            <input type="text" id="search-bar" placeholder="What are you looking for?"/>
-            <input type="button" value="Go!" onclick="search()">
+            <div>
+                <label for="search-bar">Search: </label>
+                <input type="text" id="search-bar" placeholder="What are you looking for?"/>
+                <input type="button" value="Search by Name" onclick="search()">
+            </div>
+            <div>
+                <label for="cat-bar">Categories: </label>
+                <select id="cat-bar">
+                    <option value="">--Choose a category--</option>
+                    <option value="American">American</option>
+                    <option value="German">German</option>
+                    <option value="Russian">Russian</option>
+                </select>
+                <input type="button" value="Search by category" onclick="category()">
+            </div>
         </div>
-        <div id="Welcome">
+        <div id="welcome">
             <p>Welcome to RevShop!</p>
         </div>
         <div id="account">
@@ -31,7 +43,6 @@
             </div>
         </div>
     </div>
-    <div id = "shop-display">
-    </div>
+    <div id = "shop-display"></div>
 </body>
 </html>
