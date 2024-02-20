@@ -3,7 +3,7 @@ package dev.cacnio.RevECom.entity;
 import jakarta.persistence.*;
 
 import java.util.Objects;
-
+import java.util.Set;
 
 
 /*
@@ -44,9 +44,6 @@ public class Product {
 
     @Column (name="description")
     private String description;
-
-    /*@Column (name="keywords")
-    private ArrayList<String> keywords;*/
 
     public Product(){}
 
