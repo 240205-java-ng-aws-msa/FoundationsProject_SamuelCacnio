@@ -7,7 +7,7 @@ create table account (
 );
 create table product (
     item_id int primary key auto_increment,
-    name varchar(255) not null unique,
+    name varchar(255) not null,
     image_path varchar(255),
     price double,
     description varchar(255)
