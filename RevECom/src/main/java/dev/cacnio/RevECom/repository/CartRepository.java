@@ -14,5 +14,15 @@ import java.util.List;
 public interface CartRepository extends JpaRepository<Cart, CartPK> {
 
     @Query("FROM Cart WHERE account_id = :account_id")
-    List<Cart> findByAccount_id (@Param("account_id") Integer account_id);
+    List<Cart> findByAccount_id(@Param("account_id") Integer account_id);
+
+    @Query("FROM Cart WHERE account_id = :account_id AND item_id = :item_id")
+    Cart findByAccount_idAndItem_id(@Param("account_id") Integer account_id, @Param("item_id") Integer item_id);
+
+    @Query("SELECT COALESCE(sum(quantity),0) FROM Cart WHERE account_id = :account_id")
+    Integer sumQuantityByAccount_id(@Param("account_id") Integer account_id);
+
+    @Modifying
+    @Query("UPDATE Cart c SET c.quantity = :quantity WHERE c.account_id = :account_id AND c.item_id = :item_id")
+    Integer updateCart(@Param("quantity") Integer quantity, @Param("account_id") Integer account_id, @Param("item_id") Integer item_id);
 }

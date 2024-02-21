@@ -61,4 +61,26 @@ public class EShopController {
         Product target = productService.findByName(name);
         return ResponseEntity.status(200).body(target);
     }
+
+    @GetMapping("/users/{account_id}")
+    @ResponseBody
+    public ResponseEntity<List<Cart>> getUserCart(@PathVariable Integer account_id){
+        return ResponseEntity.status(200).body(cartService.getUserCart(account_id));
+    }
+
+    @GetMapping("/users/{account_id}/count")
+    @ResponseBody
+    public ResponseEntity<Integer> getUserCartQuantity(@PathVariable String account_id){
+        return ResponseEntity.status(200).body(cartService.getUserCartQuantity(Integer.parseInt(account_id)));
+    }
+    @PostMapping("/carts")
+    public ResponseEntity<Cart> initCart(@RequestBody Cart cart){
+        return ResponseEntity.status(200).body(cartService.createCart(cart));
+    }
+
+    @PatchMapping("/carts")
+    public ResponseEntity<Integer> updateCart(@RequestBody Cart cart){
+        return ResponseEntity.status(200).body(cartService.updateCartQuantity(cart));
+    }
+
 }

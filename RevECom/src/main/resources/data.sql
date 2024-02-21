@@ -33,4 +33,4 @@ insert into product values (2, 'KV-2', 'C:/Users/samca/Revature_Training/Foundat
 insert into product values (3, 'Thunderbolt-VII', 'C:/Users/samca/Revature_Training/FoundationsProject_SamuelCacnio/RevECom/src/main/resources/images/thunderboltvii.jpg', 70.0, 'Commanded by Lieutenant Colonel Creighton Abrams', 'American');
 insert into product values (4, 'Tiger-131', 'C:/Users/samca/Revature_Training/FoundationsProject_SamuelCacnio/RevECom/src/main/resources/images/tiger131.jpg', 90.0, 'The last Tiger', 'German');
 
-insert into cart values (1,1,1);
+insert into cart values (1,1,2);

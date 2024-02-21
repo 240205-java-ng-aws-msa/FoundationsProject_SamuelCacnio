@@ -16,7 +16,19 @@ public class CartService {
         this.cartRepository = cartRepository;
     }
 
+    public Cart createCart(Cart cart){
+        return cartRepository.save(cart);
+    }
+
     public List<Cart> getUserCart(Integer account_id){
         return cartRepository.findByAccount_id(account_id);
+    }
+
+    public Integer getUserCartQuantity(Integer account_id){
+        return cartRepository.sumQuantityByAccount_id(account_id);
+    }
+
+    public Integer updateCartQuantity(Cart cart){
+        return cartRepository.updateCart(cart.getQuantity(), cart.getAccount_id(), cart.getItem_id());
     }
 }

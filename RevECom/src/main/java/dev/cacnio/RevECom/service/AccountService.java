@@ -13,10 +13,6 @@ public class AccountService {
         this.accountRepository = accountRepository;
     }
 
-    /*public Boolean accountExists(Integer id){
-        return accountRepository.findById(id).isPresent();
-    }*/
-
     public Boolean emailMatch(String email){
         return accountRepository.findByEmail(email)!=null;
     }

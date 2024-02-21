@@ -9,14 +9,14 @@ async function category(){
     if (nation=="All"){
         all_items();
     }
-    const url = "http://localhost:8080/store/nations/"+nation;
-    console.log(url);
-    new_display(url, "shop-display");
+    else{
+        const url = "http://localhost:8080/store/nations/"+nation;
+        new_display(url, "shop-display");
+    }
 }
 
 async function new_display(url, element){
     try{
-        console.log("fetching");
         const res = await fetch(url);
         if (res.status === 200){
             const data = await res.json();
