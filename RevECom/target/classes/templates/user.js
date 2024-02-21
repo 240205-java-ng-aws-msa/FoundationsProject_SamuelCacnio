@@ -112,12 +112,10 @@ async function register(){
 
 async function cartCount(accountId){
     const url = "http://localhost:8080/users/"+accountId.toString()+"/count";
-    console.log(url);
     try{
         const res = await fetch(url);
         if (res.status === 200){
             const data = await res.json();
-            console.log(data);
             const accountInfo = document.getElementById("account");
             const count = document.createTextNode(data);
             accountInfo.appendChild(count);

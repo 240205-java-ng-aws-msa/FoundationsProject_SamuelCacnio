@@ -1,6 +1,6 @@
 async function all_items(){ 
     const url = "http://localhost:8080/store";
-    new_display(url, "shop-display");
+    big_display(url, "shop-display");
 }
 
 async function category(){
@@ -11,11 +11,11 @@ async function category(){
     }
     else{
         const url = "http://localhost:8080/store/nations/"+nation;
-        new_display(url, "shop-display");
+        big_display(url, "shop-display");
     }
 }
 
-async function new_display(url, element){
+async function big_display(url, element){
     try{
         const res = await fetch(url);
         if (res.status === 200){
@@ -55,11 +55,30 @@ function single_display(product, place){
     item_price.innerHTML = "$"+product.price;
     item.appendChild(item_price);
 
-    /*
-    const item_desc = document.createElement("p");
-    item_desc.innerHTML = product.description;
-    item.appendChild(item_desc);
-    */
+    const desc = document.createElement("p");
+    desc.innerHTML = product.description;
+    item.appendChild(desc);
+
+    const q_label = document.createElement("label")
+    q_label.setAttribute("for", `Quant_${product.name}`);
+    q_label.innerHTML = "Quantity Desired:";
+    item.append(q_label);
+
+    const quantity = document.createElement("input");
+    quantity.setAttribute("type", "number");
+    quantity.setAttribute("id", `Quant_${product.name}`);
+    quantity.setAttribute("value", "1");
+    item.appendChild(quantity);
+
+    const cart_button = document.createElement("input");
+    cart_button.setAttribute("type","button");
+    cart_button.setAttribute("value","Add to Cart");
+    //implement add_to_cart function
+    item.appendChild(cart_button);
             
     place.appendChild(item);
+}
+
+function add_to_cart(){
+    console.log("test");
 }
